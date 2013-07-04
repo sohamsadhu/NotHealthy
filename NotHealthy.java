@@ -50,8 +50,7 @@ class Agent extends Thread
                 System.out.println("Agent has put "+ resource[ fitem ].toString() +
                         " and "+ resource[ sitem ].toString() +" on the table.") ;
                 table.notifyAll() ;
-                try 
-                {
+                try {
                     table.wait( 1000 ) ; 
                 } catch( InterruptedException iex ) {
                     System.err.println("The thread was interrupted.") ;
@@ -89,8 +88,7 @@ class Smoker extends Thread
         // Done with smoking.
         System.out.println( name +" is smoking." ) ;
         table.notifyAll() ;
-        try 
-        {
+        try {
             table.wait( 1000 ) ;
         } catch( InterruptedException iex ) {
             System.err.println("The thread was interrupted.") ;
